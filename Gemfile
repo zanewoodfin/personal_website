@@ -49,16 +49,16 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
-  gem 'pry-rails'
+  gem "pry-rails"
 
-  gem 'rspec-rails'
+  gem "rspec-rails"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
 
 group :development do
-  gem 'foreman'
+  gem "foreman"
 
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
