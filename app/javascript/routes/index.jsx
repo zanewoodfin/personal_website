@@ -5,6 +5,7 @@ import Home from "../components/Home";
 import Books from "../components/books/Books";
 import Book from "../components/books/Book";
 import NewBook from "../components/books/NewBook";
+import EditBook from "../components/books/EditBook";
 
 export default (
   <Router>
@@ -14,6 +15,7 @@ export default (
         <Route path="/books" exact element={<Books />} />
         <Route path="/books/new" element={<NewBook />} />
         <Route path="/books/:id" exact element={<Book />} />
+        <Route path="/books/:id/edit" exact element={<EditBook />} />
       </Route>
     </Routes>
   </Router>

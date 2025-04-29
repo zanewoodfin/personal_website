@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :books, only: %i[create destroy index show]
+      resources :books, only: %i[create destroy index show update]
     end
   end
 

@@ -40,6 +40,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
+  # Easy construction of test data
+  gem "factory_bot_rails"
+  # Random data generator
+  gem "faker"
   # Allows adding binding.pry statements within the code for debugging
   gem "pry-rails"
   # Preferred testing library for Ruby code

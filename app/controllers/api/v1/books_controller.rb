@@ -1,5 +1,5 @@
 class Api::V1::BooksController < ApplicationController
-  before_action :set_book, only: %i[show destroy]
+  before_action :set_book, only: %i[show destroy update]
 
   def index
     books = Book.all.order(title: :asc)
@@ -20,14 +20,19 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def destroy
-    @book&.destroy
-    render json: { meesage: 'Book deleted!' }
+    @book.destroy
+    render json: { meesage: "Book deleted!" }
+  end
+
+  def update
+    @book.update(book_params)
+    render json: { id: @book.id, message: "Book updated!" }
   end
 
   private
 
   def book_params
-    params.expect(book: [:title, :author, :review])
+    params.expect(book: %i[title author review])
   end
 
   def set_book

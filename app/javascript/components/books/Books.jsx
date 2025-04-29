@@ -35,12 +35,19 @@ const Books = () => {
       <td>
         {book.author}
       </td>
+      <td>
+        <div className="text-end">
+          <Link to={`/books/${book.id}/edit`}>
+            Edit
+          </Link>
+        </div>
+      </td>
     </tr>
   ));
 
   const noBooks = (
     <tr>
-      <td colSpan="2">
+      <td colSpan="3">
         {
           loading ? (
             <div className="text-center">
@@ -65,6 +72,7 @@ const Books = () => {
           <tr>
             <th>Title</th>
             <th>Author</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
