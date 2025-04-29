@@ -53,6 +53,8 @@ group :development, :test do
 end
 
 group :development do
+  # Add field information to top of models
+  gem "annotaterb"
   # Start the development instance of the app with bin/dev
   gem "foreman"
   # Use console on exceptions pages [https://github.com/rails/web-console]
