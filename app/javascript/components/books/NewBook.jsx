@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const NewBook = () => {
   const navigate = useNavigate();
@@ -38,32 +40,40 @@ const NewBook = () => {
 
   return (
     <>
-      <h1>Add a new book</h1>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="book_title">Title</label>
-        <input
-          type="text"
-          name="title"
-          id="book_title"
-          required
-          onChange={(event) => onChange(event, setTitle)}
-        />
-        <label htmlFor="book_author">Author</label>
-        <input
-          type="text"
-          name="author"
-          id="book_author"
-          required
-          onChange={(event) => onChange(event, setAuthor)}
-        />
-        <label htmlFor="book_review">Review</label>
-        <textarea
-          name="review"
-          id="book_review"
-          onChange={(event) => onChange(event, setReview)}
-        />
-        <input type="submit" value="Create Book" />
-      </form>
+      <h1>New Book</h1>
+      <Form onSubmit={onSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="book_title">Title</Form.Label>
+          <Form.Control
+            type="text"
+            name="title"
+            id="book_title"
+            required
+            onChange={(event) => onChange(event, setTitle)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="book_author">Author</Form.Label>
+          <Form.Control
+            type="text"
+            name="author"
+            id="book_author"
+            required
+            onChange={(event) => onChange(event, setAuthor)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="book_review">Review</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows="10"
+            name="review"
+            id="book_review"
+            onChange={(event) => onChange(event, setReview)}
+          />
+        </Form.Group>
+        <Button variant="outline-primary" type="submit">Create Book</Button>
+      </Form>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 const Book = () => {
   const params = useParams();
@@ -45,14 +46,12 @@ const Book = () => {
   return(
     <div id="book">
       <h1>{book.title}</h1>
-      <h2>Author</h2>
-      <p>{book.author}</p>
-      <h2>Review</h2>
+      <p>By: {book.author}</p>
       <p>{book.review}</p>
       <div>
-        <button type="button" onClick={deleteBook}>
+        <Button variant="outline-primary" onClick={deleteBook}>
           Delete Book
-        </button>
+        </Button>
       </div>
     </div>
   );
