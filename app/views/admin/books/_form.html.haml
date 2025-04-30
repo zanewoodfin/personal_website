@@ -6,14 +6,14 @@
         - @book.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :author
-    = f.text_field :author
-  .field
-    = f.label :review
-    = f.textarea :review
-  .actions
-    = f.submit 'Save'
+  .mb-3
+    = f.label :title, class: "form-label"
+    = f.text_field :title, class: "form-control"
+  .mb-3
+    = f.label :author, class: "form-label"
+    = f.text_field :author, class: "form-control"
+  .mb-3
+    = f.label :review, class: "form-label"
+    = f.textarea :review, class: "form-control"
+  .actions.mb-3
+    = f.submit 'Save', class: "btn btn-outline-primary"
