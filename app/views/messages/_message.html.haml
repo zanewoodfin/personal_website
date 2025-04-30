@@ -1,0 +1,7 @@
+%div{:id => "#{dom_id(message)}_messages"}
+  - if message.user?
+    .alert.alert-dark{role: "alert"}
+      = message.content
+  - else
+    .alert.alert-light{role: "alert"}
+      = message.content

@@ -40,3 +40,6 @@
 
 # Ignore local environment variable
 .rbenv-vars
+
+# Ignore redis files
+dump.rdb

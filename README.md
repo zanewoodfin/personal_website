@@ -6,7 +6,7 @@ Right now this is just a website in which to personally tinker with.
 
 Install postgres and redis (Arch Linux):
 
-    pacman -S postgresql redis
+    pacman -S postgresql
 
 Install [rbenv](https://github.com/rbenv/rbenv):
 

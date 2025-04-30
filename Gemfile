@@ -29,8 +29,6 @@ gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.2"
 # Make requests to OpenAI
 gem "ruby-openai"
-# Simple, efficient background processing using Redis: https://github.com/sidekiq/sidekiq
-gem "sidekiq", "~> 7.0.9"
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
 gem "solid_queue"
@@ -66,6 +64,8 @@ group :development do
   gem "annotaterb"
   # Start the development instance of the app with bin/dev
   gem "foreman"
+  # Convert erb files to haml
+  gem "html2haml"
   # Lint haml files
   gem "haml_lint"
   # Use console on exceptions pages [https://github.com/rails/web-console]

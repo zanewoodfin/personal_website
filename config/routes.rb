@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
   root "home#index"
 
+  # Devise authentication
   devise_for :users, skip: %i[ registration ]
 
+  # API to feed React front end
   namespace :api do
     namespace :v1 do
       resources :books, only: %i[ index show ]
     end
   end
 
+  # Admin
   get "/admin" => "admin#index"
-
   namespace :admin do
     resources :books
+  end
+
+  # ChatGPT streaming
+  resources :chats, only: %i[ create index show ] do
+    resources :messages, only: %i[ create ]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -1,0 +1,8 @@
+%h1 Chat Bot
+
+%div{style: "height: 400px;"}
+  .overflow-y-auto.mh-100
+    = turbo_stream_from "#{dom_id(@chat)}_messages"
+    %div{id: "#{dom_id(@chat)}_messages"}
+      = render @chat.messages
+  = render partial: "messages/form", locals: { chat: @chat }

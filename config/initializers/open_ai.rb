@@ -1,4 +1,5 @@
 OpenAI.configure do |config|
+  config.uri_base = ENV["OPENAI_URI_BASE"]
   config.access_token = ENV["OPENAI_ACCESS_TOKEN"]
 
   # Optional, used for admin endpoints, created here: https://platform.openai.com/settings/organization/admin-keys
