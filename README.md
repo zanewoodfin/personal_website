@@ -1,24 +1,37 @@
 # README
+Right now this is just a website in which to personally tinker with.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install System Dependencies
+Install postgres and redis (Arch Linux):
+    pacman -S postgresql redis
 
-Things you may want to cover:
+Install [rbenv](https://github.com/rbenv/rbenv):
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    ~/.rbenv/bin/rbenv init
 
-* Ruby version
+Install [ruby-build plugin for rbenv](https://github.com/rbenv/ruby-build):
+    git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-* System dependencies
+Install [rbenv-vars plugin for rbenv](https://github.com/rbenv/rbenv-vars):
+    git clone https://github.com/rbenv/rbenv-vars.git "$(rbenv root)"/plugins/rbenv-vars
 
-* Configuration
+Install the needed version of Ruby (from within project directory):
+    rbenv install
 
-* Database creation
+## Configuration
+Set up postgres and the developement user with ability to create databases.
+    username: personal_website
+    password: password
 
-* Database initialization
+Create the .rbenv_vars file and populate any needed environment variables:
+    cp .rbenv_vars.example .rbenv_vars
 
-* How to run the test suite
+## Run Local Server
+    bundle exec bin/dev
 
-* Services (job queues, cache servers, search engines, etc.)
+## Run Tests
+    bundle exec rspec
 
-* Deployment instructions
-
-* ...
+## Run Linters
+    bundle exec rubocop
+    bundle exec haml-lint
