@@ -15,8 +15,9 @@
         %td= book.author
         %td= book.review
         %td
-          = link_to 'Show', [:admin, book]
+          = link_to 'Show', [ :admin, book ]
           = link_to 'Edit', edit_admin_book_path(book)
-          = link_to 'Destroy', [:admin, book], method: :delete, data: { turbo_method: :delete, confirm: 'Are you sure?' }
+          = link_to 'Destroy', [ :admin, book ], method: :delete,
+            data: { turbo_method: :delete, confirm: 'Are you sure?' }
 
 = link_to 'New Book', new_admin_book_path

@@ -3,7 +3,7 @@
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}
     %title= content_for(:title) || "Personal Website"
-    %meta{ content: "width=device-width,initial-scale=1", name: "viewport"}
+    %meta{content: "width=device-width,initial-scale=1", name: "viewport"}
     %meta{content: "yes", name: "apple-mobile-web-app-capable"}
     %meta{content: "yes", name: "mobile-web-app-capable"}
     = csrf_meta_tags
@@ -18,11 +18,11 @@
     %nav.navbar.bg-body-tertiary.navbar-expand-lg.navbar-light
       .container.container-fluid
         = link_to "Admin", admin_path, class: "navbar-brand"
-        %button.navbar-toggler{ type: "button", "data-bs-toggle": "collapse",
-          "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent",
-          "aria-expanded": "false", "aria-label": "Toggle navigation" }
+        %button.navbar-toggler{type: "button", "data-bs-toggle": "collapse",
+          "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbar-supported-content",
+          "aria-expanded": "false", "aria-label": "Toggle navigation"}
           %span.navbar-toggler-icon
-        #navbarSupportedContent.collapse.navbar-collapse
+        #navbar-supported-content.collapse.navbar-collapse
           %ul.navbar-nav
             %li.nav-item
               = link_to "Books", admin_books_path, class: "nav-link"

@@ -62,7 +62,8 @@ group :development do
   gem "annotaterb"
   # Start the development instance of the app with bin/dev
   gem "foreman"
-  gem "html2haml"
+  # Lint haml files
+  gem "haml_lint"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
