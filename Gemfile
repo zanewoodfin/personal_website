@@ -29,6 +29,8 @@ gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.2"
 # Make requests to OpenAI
 gem "ruby-openai"
+# Simple, efficient background processing using Redis: https://github.com/sidekiq/sidekiq
+gem "sidekiq", "~> 7.0.9"
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
 gem "solid_queue"
