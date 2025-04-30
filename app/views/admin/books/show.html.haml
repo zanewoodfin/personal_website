@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @book.title
+%p
+  %b Author:
+  = @book.author
+%p
+  %b Review:
+  = @book.review
+
+= link_to 'Edit', edit_admin_book_path(@book)
+\|
+= link_to 'Back', admin_books_path
