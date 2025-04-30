@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root "home#index"
 
-  devise_for :users, skip: %i[registration]
+  devise_for :users, skip: %i[ registration ]
 
   namespace :api do
     namespace :v1 do
-      resources :books, only: %i[create destroy index show update]
+      resources :books, only: %i[ index show ]
     end
   end
 
@@ -25,4 +25,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Route paths that are not known to Rails to the React router
+  get "/*path" => "home#index"
 end

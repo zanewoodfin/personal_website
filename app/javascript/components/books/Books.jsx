@@ -35,13 +35,6 @@ const Books = () => {
       <td>
         {book.author}
       </td>
-      <td>
-        <div className="text-end">
-          <Link to={`/books/${book.id}/edit`}>
-            Edit
-          </Link>
-        </div>
-      </td>
     </tr>
   ));
 
@@ -64,15 +57,11 @@ const Books = () => {
   return (
     <>
       <h1>Books</h1>
-      <Link to="/books/new">
-        Add New Book
-      </Link>
       <Table hover>
         <thead>
           <tr>
             <th>Title</th>
             <th>Author</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
