@@ -1,0 +1,30 @@
+!!!
+%html{"data-bs-theme" => "dark"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}
+    %title= content_for(:title) || "Personal Website"
+    %meta{ content: "width=device-width,initial-scale=1", name: "viewport"}
+    %meta{content: "yes", name: "apple-mobile-web-app-capable"}
+    %meta{content: "yes", name: "mobile-web-app-capable"}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = yield :head
+    %link{href: "/icon.png", rel: "icon", type: "image/png"}
+    %link{href: "/icon.svg", rel: "icon", type: "image/svg+xml"}
+    %link{href: "/icon.png", rel: "apple-touch-icon"}/
+    = stylesheet_link_tag :app, "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+  %body
+    %nav.navbar.bg-body-tertiary.navbar-expand-lg.navbar-light
+      .container.container-fluid
+        %a.navbar-brand{ href: "#"} Admin
+        %button.navbar-toggler{ type: "button", "data-bs-toggle": "collapse",
+          "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false", "aria-label": "Toggle navigation" }
+          %span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          %ul.navbar-nav
+            %li.nav-item
+              %a.nav-link{ href: "#" } Books
+    .container
+      = yield

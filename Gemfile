@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+# Handle authentication
+gem "devise"
 # Use haml instead of erb
 gem "haml"
 gem "haml-rails"
@@ -60,6 +62,7 @@ group :development do
   gem "annotaterb"
   # Start the development instance of the app with bin/dev
   gem "foreman"
+  gem "html2haml"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
